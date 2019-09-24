@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:100,400');
+@import url('https://fonts.googleapis.com/css?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
+
+button:active,
+button:focus {
+	outline: none;
+}
+button{
+	background: none;
+	border: 0;
+}
+button:-moz-focus-inner {
+	border: 0;
+}
+li{
+	list-style: none;
+}

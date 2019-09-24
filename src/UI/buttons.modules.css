@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:100,400');
+@import url('https://fonts.googleapis.com/css?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
+
+.btn-toggle-open-create,
+.btn-toggle-open-select{
+	width: 100%;
+	height: 100%;
+}
+.btn-animation-select,
+.btn-animation-create{
+	background: none;
+	width: 100%;
+	height: 100%;
+}
+.devL, .devR {
+	width: 2px;
+	height: 27px;
+	background: white;
+	position: absolute;
+}
+.devR {
+	transform: rotate(-45deg);
+}
