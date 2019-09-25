@@ -7,17 +7,17 @@ const reply = (res, body, timeout = 1000, status = 200) =>
     res.status(status).json(body)
   }, timeout)
 
-  const connectDb = (onConnect) => {
-    var url = "mongodb://localhost:27017/";
+const connectDb = (onConnect) => {
+  var url = "mongodb://localhost:27017/";
 
-    MongoClient.connect(url, function(err, db) {
-      if (err) throw err;
-      var dbo = db.db("articles_db");
-      onConnect(dbo);
-    });
-  }
+  MongoClient.connect(url, function(err, db) {
+    if (err) throw err;
+    var dbo = db.db("articles_db");
+    onConnect(dbo);
+  });
+}
 
-  router.get('/article', function(req, res, next) {
+router.get('/article', function(req, res, next) {
   connectDb((dbo) => {
 
     dbo.collection("articles").find({}).toArray(function(err, result) {
@@ -42,6 +42,7 @@ router.post('/article', function(req, res, next) {
     console.log(req)
 
     var article = {
+      id: Date.now().toString(),
       title: body.title,
       years: body.years,
       location: body.location,
