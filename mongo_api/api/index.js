@@ -23,9 +23,7 @@ router.get('/article', function(req, res, next) {
     dbo.collection("articles").find({}).toArray(function(err, result) {
       if (err) throw err;
       var articles = result.map(function(article) {
-          return assign({}, article, {
-
-          })
+          return assign({}, article, {})
       }),
       limit = Number(req.query.limit) || articles.length,
       offset = Number(req.query.offset) || 0
@@ -35,6 +33,25 @@ router.get('/article', function(req, res, next) {
   })
 })
 
+router.get('/article/:id', function(req, res, next) {
+
+  connectDb((dbo) => {
+
+    dbo.collection("articles").find({}).toArray(function(err, result) {
+      if (err) throw err;
+
+      var article = result.filter(function(article) {
+          return article.id == req.params.id
+        })[0]
+        if (article) return reply(res, article, 950)
+
+        reply(res, { error: 'not found' }, 100, 404)
+
+    })
+  })
+
+})
+
 router.post('/article', function(req, res, next) {
   connectDb((dbo) => {
 
@@ -42,12 +59,12 @@ router.post('/article', function(req, res, next) {
     console.log(req)
 
     var article = {
-      id: Date.now().toString(),
       title: body.title,
       years: body.years,
       location: body.location,
       description: body.description,
-      members: body.members
+      members: body.members,
+      id: Date.now().toString()
     }
 
     dbo.collection("articles").insertOne(article, function(err, res){

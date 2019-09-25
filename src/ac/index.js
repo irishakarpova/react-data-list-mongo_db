@@ -14,7 +14,7 @@ export default function changeSelection(selected){
 export function addArticle(article){
 	return{
 		type: ADD_ARTICLE,
-		payload: article,
+		payload: {article},
 		generateId: true,
     callAPI: '/api/article',
 	}
@@ -25,7 +25,6 @@ export function loadAllArticles(){
     callAPI: '/api/article'
   }
 }
-
 export function loadArticleById(id){
   return (dispatch) => {
     dispatch({

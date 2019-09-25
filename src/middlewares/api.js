@@ -5,11 +5,11 @@ export default store => next => action => {
 
   let options = {};
   if (payload) {
-    options.method = 'POST';
-    options.body = JSON.stringify(payload);
+    options.method = 'POST'
+    options.body = JSON.stringify(payload)
     options.headers = {
       'Content-Type': 'application/json'
-    };
+    }
   }
 
   fetch(callAPI, options)
