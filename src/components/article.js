@@ -2,7 +2,7 @@ import React, {Component} from "react"
 import {connect} from 'react-redux'
 import { loadArticleById  } from '../ac'
 import styles from "./components.modules.css"
-import globalStyles from '../UI/bootstrap.module.css'
+import globalStyles from 'bootstrap'
 import classLister from 'css-module-class-lister'
 
 

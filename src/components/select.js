@@ -5,7 +5,7 @@ import changeSelection from '../ac'
 import {articleListSelector, selectionSelector} from '../selectors'
 import PropTypes from 'prop-types';
 import styles from "./components.modules.css"
-import globalStyles from '../UI/bootstrap.module.css'
+import globalStyles from 'bootstrap'
 import classLister from 'css-module-class-lister'
 
 const classes = classLister(styles, globalStyles)

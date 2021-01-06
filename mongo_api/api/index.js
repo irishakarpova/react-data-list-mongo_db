@@ -54,7 +54,6 @@ router.get('/article/:id', function(req, res, next) {
 
 router.post('/article', function(req, res, next) {
   connectDb((dbo) => {
-
     var body = req.body
     console.log(req)
 

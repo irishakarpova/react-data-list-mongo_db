@@ -15,13 +15,11 @@ export const filtratedArticlesSelector = createSelector(
   selectionSelector,
   articleListSelector,
   (selected, articles) => {
-
-
     return articles.filter((article) => {
-	return(
-		(selected !== null)  ? (!selected.length || selected.find((selected) =>
-		  selected.value === article.id)) : (!selected)
-		  )
-    })
-  }
-)
+    	return(
+    		(selected !== null)  ? (!selected.length || selected.find((selected) =>
+    		  selected.value === article.id)) : (!selected)
+    		  )
+      })
+    }
+  )

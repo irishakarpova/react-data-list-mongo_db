@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import ToggleCreate from './toggleCreate'
 import ToggleSelect from './toggleSelect'
 import styles from '../App.module.css'
-import globalStyles from './bootstrap.module.css'
+import globalStyles from 'bootstrap'
 import classLister from 'css-module-class-lister'
 
 const classes = classLister(styles, globalStyles)
